@@ -109,7 +109,7 @@ class Person {
         this.name = name;
     }
 
-    getName(){
+    getName() {
         return this.name;
     }
 }
@@ -123,3 +123,44 @@ class Student extends Person {
 
 const student = new Student("Géza", "Bolyai");
 console.log("név: " + student.getName()+ ", iskola: " + student.school);
+
+class Animal {
+    constructor(name){
+        this.name = name;
+    }
+
+    hang() {
+        console.log("A", this.name + " hangot ad ki");
+    }
+}
+
+class Mammal extends Animal {
+    constructor(name){
+        super(name)
+    }
+
+    jar() {
+        console.log("A", this.name + " jár");
+    }
+}
+
+class Bird extends Animal {
+    constructor(name){
+        super(name)
+    }
+
+    repul() {
+        console.log("A", this.name + " repül");
+    }
+}
+
+
+const bird = new Bird ("Veréb");
+
+bird.hang();
+bird.repul();
+
+const mammal = new Mammal("Kutya");
+
+mammal.hang()
+mammal.jar()
