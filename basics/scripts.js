@@ -103,3 +103,23 @@ console.log(gomszab.getTierLevel());
 // const bird = new Bird("Veréb");
 // bird.hang();   
 // bird.repul();
+
+class Person {
+    constructor(name) {
+        this.name = name;
+    }
+
+    getName(){
+        return this.name;
+    }
+}
+
+class Student extends Person {
+    constructor(name,school){
+        super(name)
+        this.school = school;
+    }
+}
+
+const student = new Student("Géza", "Bolyai");
+console.log("név: " + student.getName()+ ", iskola: " + student.school);
