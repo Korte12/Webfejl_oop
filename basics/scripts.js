@@ -50,8 +50,6 @@ console.log(gomszab)
 gomszab.play()
 console.log(gomszab.getTierLevel());
 
-<<<<<<< HEAD
-=======
 // function Person(name) {
 //     this.name = name;
 // }
@@ -166,4 +164,5 @@ const mammal = new Mammal("Kutya");
 
 mammal.hang()
 mammal.jar()
->>>>>>> 3d882f3e285e7393c6b331d814792cfe747b8d8b
+
+
