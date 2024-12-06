@@ -50,3 +50,120 @@ console.log(gomszab)
 gomszab.play()
 console.log(gomszab.getTierLevel());
 
+<<<<<<< HEAD
+=======
+// function Person(name) {
+//     this.name = name;
+// }
+
+// Person.prototype.getName = function() {
+//     return this.name;
+// };
+
+// function Student(name, school) {
+//     Person.call(this, name);
+//     this.school = school;
+// }
+
+// Object.setPrototypeOf(Student.prototype, Person.prototype);
+
+// const student = new Student("Géza", "Bolyai");
+// console.log("Név: " + student.getName() + " , Iskola: " + student.school);
+
+// function Animal(name) {
+//     this.name = name;
+// }
+
+// Animal.prototype.hang = function() {
+//     console.log("A", this.name + " hangot ad ki");
+// };
+
+// function Mammal(name) {
+//     Animal.call(this, name); 
+// }
+
+// Object.setPrototypeOf(Mammal.prototype, Animal.prototype);
+
+// Mammal.prototype.jar = function() {
+//     console.log("A", this.name + " jár");
+// };
+
+// function Bird(name) {
+//     Animal.call(this, name);  
+// }
+
+// Object.setPrototypeOf(Bird.prototype, Animal.prototype);
+
+// Bird.prototype.repul = function() {
+//     console.log("A", this.name + " repül");
+// };
+
+// const mammal = new Mammal("Kutya");
+// mammal.hang(); 
+// mammal.jar(); 
+
+// const bird = new Bird("Veréb");
+// bird.hang();   
+// bird.repul();
+
+class Person {
+    constructor(name) {
+        this.name = name;
+    }
+
+    getName() {
+        return this.name;
+    }
+}
+
+class Student extends Person {
+    constructor(name,school){
+        super(name)
+        this.school = school;
+    }
+}
+
+const student = new Student("Géza", "Bolyai");
+console.log("név: " + student.getName()+ ", iskola: " + student.school);
+
+class Animal {
+    constructor(name){
+        this.name = name;
+    }
+
+    hang() {
+        console.log("A", this.name + " hangot ad ki");
+    }
+}
+
+class Mammal extends Animal {
+    constructor(name){
+        super(name)
+    }
+
+    jar() {
+        console.log("A", this.name + " jár");
+    }
+}
+
+class Bird extends Animal {
+    constructor(name){
+        super(name)
+    }
+
+    repul() {
+        console.log("A", this.name + " repül");
+    }
+}
+
+
+const bird = new Bird ("Veréb");
+
+bird.hang();
+bird.repul();
+
+const mammal = new Mammal("Kutya");
+
+mammal.hang()
+mammal.jar()
+>>>>>>> 3d882f3e285e7393c6b331d814792cfe747b8d8b
