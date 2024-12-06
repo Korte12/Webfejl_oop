@@ -44,9 +44,20 @@ document.getElementById('product').addEventListener('submit',function(e){
  * table render
  */
 function initTable(){
+    for (let i = 0; i < companionList.length; i++){
 
+        const currentElement = companionList[i]
+        const companion = new Companion(i,currentElement.firstName,currentElement.lastName,currentElement.area,currentElement.products) // Megadtuk a paramétereket
+        factory.addMano(companion)
+        for (const pr of currentElement.products) {
+            companion.productAdd(pr)
+        }
+    }
     // TODO 6
+    console.log(factory)
 }
+
+
 
 
 initTable()
@@ -62,3 +73,4 @@ function checkEventListener(e){
     const companionId = row.id;
     // TODO 10
 }
+
