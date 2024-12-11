@@ -8,6 +8,10 @@ addMano(companion) { //A manólist az osztályon belül elérhető ezért kell a
     createRow(companion)
 }
 
+generateid(){
+    return this.manolist
+}
+
  // TODO 1, 2, 3, 4, 9, 10
 }
 
