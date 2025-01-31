@@ -27,6 +27,7 @@ class DataManager {
      */
     setUpdateCallback(callback){
         this.#updateCallback = callback
+        this.#updateCallback(this.#array)
         
     }
 
@@ -67,6 +68,40 @@ class DataManager {
     }
 }
 
-class DataTable {
 
+class DataTable {
+    /**
+     * 
+     * @param {DataManager} domci 
+     */
+    constructor(domci){
+        const table = document.createElement("body")
+        document.body.appendChild(table)
+
+        const tbody = document.createElement("tbody")
+        table.appendChild(tbody)
+
+        domci.setUpdateCallback((persons) =>{
+            tbody.innerHTML = ""
+            for (const sigma of persons) {
+                const tr = document.createElement("tr")
+                tbody.appendChild(tr)
+
+                const nevC = document.createElement("td")
+                nevC.innerHTML = sigma.nev
+                tr.appendChild(nevC)
+
+                const eletkorC = document.createElement("td")
+                eletkorC.innerHTML = sigma.eletkor
+                tr.appendChild(eletkorC)
+
+
+            }
+    
+        })     
+
+    }
 }
+const dataManager = new DataManager([{nev: "Feri", eletkor: 17}, {nev: "Teri", eletkor: 18}, {nev: "Gábor", eletkor: 16}])
+
+const dataTable = new DataTable(dataManager)
