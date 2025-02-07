@@ -66,6 +66,17 @@ class DataManager {
         } 
         this.#updateCallback(result)
     }
+    
+    filter(callback){
+        const result = [];
+        for(const element of this.#array){
+            if(callback(element)){
+                result.push(element)
+            }
+        } 
+        this.#updateCallback(result)
+
+    }
 }
 
 
@@ -102,6 +113,29 @@ class DataTable {
 
     }
 }
-const dataManager = new DataManager([{nev: "Feri", eletkor: 17}, {nev: "Teri", eletkor: 18}, {nev: "Gábor", eletkor: 16}])
 
+const dataManager = new DataManager([{nev: "Feri", eletkor: 17}, {nev: "Teri", eletkor: 18}, {nev: "Gábor", eletkor: 16}])
 const dataTable = new DataTable(dataManager)
+
+const input1 = document.createElement('input')
+
+input1.type = "file"
+document.body.appendChild(input1)
+input1.addEventListener('change',(e) =>{
+    const file = e.currentTarget.files[0]
+    const freader = new FileReader
+    freader.readAsText(file)
+    freader.onload = () => {
+        const content = freader.result
+       const contentRows = content.split("\n")
+       for(const row of contentRows){
+        const splitt = row.split(";");
+        const pers = {nev: splitt[0], eletkor: Number(splitt[1])};
+        dataManager.add(pers)
+       }
+    }
+
+})
+
+
+
